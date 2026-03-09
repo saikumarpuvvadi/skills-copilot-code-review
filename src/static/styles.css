@@ -666,9 +666,28 @@ footer {
 }
 
 .announcement-banner {
-  background-color: #4caf50;
+  background-color: var(--success);
   color: white;
   text-align: center;
   padding: 15px;
   font-weight: bold;
+  position: relative;
+}
+
+.announcement-close {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.announcement-close:hover {
+  opacity: 0.7;
 }

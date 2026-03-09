@@ -861,6 +861,19 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeRangeFilter,
   };
 
+  // Announcement banner dismiss
+  const announcementBanner = document.querySelector(".announcement-banner");
+  const announcementClose = document.querySelector(".announcement-close");
+  if (announcementBanner && announcementClose) {
+    if (localStorage.getItem("announcementDismissed") === "true") {
+      announcementBanner.style.display = "none";
+    }
+    announcementClose.addEventListener("click", () => {
+      announcementBanner.style.display = "none";
+      localStorage.setItem("announcementDismissed", "true");
+    });
+  }
+
   // Initialize app
   checkAuthentication();
   initializeFilters();
